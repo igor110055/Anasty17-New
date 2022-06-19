@@ -1,12 +1,12 @@
-from re import match, findall
+from re import match as re_match, findall as re_findall
 from threading import Thread, Event
 from time import time
 from math import ceil
+from html import escape
 from psutil import virtual_memory, cpu_percent, disk_usage
 from requests import head as rhead
 from urllib.request import urlopen
 from telegram import InlineKeyboardMarkup
-from telegram.ext import CallbackQueryHandler
 
 from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot import dispatcher, download_dict, download_dict_lock, STATUS_LIMIT, botStartTime
